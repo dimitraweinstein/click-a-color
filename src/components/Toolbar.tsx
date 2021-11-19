@@ -1,9 +1,15 @@
-import React from 'react'
+import React, {  useState} from 'react'
 
 const Toolbar = () => {
+  const [activeColor, setActiveColor] = useState('#FFFFFF');
+
   return (
     <div>
-      <input type="color" />
+      <input
+        type="color"
+        value={activeColor}
+        onChange={(e) => setActiveColor(e.target.value)}
+      />
       <button>Undo</button>
       <button>Redo</button>
       <select>
