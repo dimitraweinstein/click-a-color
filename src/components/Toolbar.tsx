@@ -1,6 +1,6 @@
 import React, {  useState} from 'react'
 
-const Toolbar = () => {
+function Toolbar(): JSX.Element {
   const [activeColor, setActiveColor] = useState('#FFFFFF');
 
   return (

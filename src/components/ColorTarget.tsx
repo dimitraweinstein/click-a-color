@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 
 interface ColorTargetProps {
   colorChoice: string;
-  historyCallback: (args: unknown) => void;
+  // historyCallback: (args: unknown) => void;
 }
 
-const ColorTarget = ({ colorChoice, historyCallback }: ColorTargetProps): JSX.Element => {
+const ColorTarget = ({ colorChoice }: ColorTargetProps): JSX.Element => {
 
   const [targetColor, setTargetColor] = useState('#FFFFFF');
 
   const handleColorSelection = (): void => {
-    historyCallback(targetColor);
+    // historyCallback(targetColor);
     setTargetColor(colorChoice);
   }
 
