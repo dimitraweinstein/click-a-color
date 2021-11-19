@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const ColorTarget = () => {
+interface ColorTargetProps {
+  colorChoice: string;
+  // historyCallback: (args: unknown) => void;
+}
+
+const ColorTarget = ({ colorChoice }: ColorTargetProps): JSX.Element => {
+
+  const [targetColor, setTargetColor] = useState('#FFFFFF');
+
+  const handleColorSelection = (): void => {
+    // historyCallback(targetColor);
+    setTargetColor(colorChoice);
+  }
+
   return (
-    <div style={{
-      height: '500px',
+    <div
+      className="target"
+      onClick={handleColorSelection}
+      style={{
+      height: '450px',
       width: '500px',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: targetColor,
       border: '3px solid black',
     }}>
-      
     </div>
   )
 }
 
-export default ColorTarget
+export default ColorTarget;
